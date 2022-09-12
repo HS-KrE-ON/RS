@@ -1,6 +1,6 @@
 FROM ubuntu
 
-# Install dependencies
+# Install dependencies now
 RUN apt-get update && apt-get -y install python3 python3-pip
 
 COPY requirements.txt .
