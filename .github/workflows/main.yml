@@ -40,10 +40,10 @@ jobs:
           
           # Heroku API key associated with provided user's email.
           # Api Key is available under your Heroku account settings. e5a57316-0b00-47fd-81ff-2ed620a87697
-          heroku_api_key: ${{ secrets.e5a57316-0b00-47fd-81ff-2ed620a87697 }}
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           
           # Name of the heroku application to which the build is to be sent. recommendation-systemhs
-          heroku_app_name: ${{ secrets.recommendation-systemhs }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
 
           # (Optional, default: "./")
           # Dockerfile directory.
