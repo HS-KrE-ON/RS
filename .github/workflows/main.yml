@@ -42,7 +42,7 @@ jobs:
           # Api Key is available under your Heroku account settings.
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           
-          # Name of the heroku application to which the build is to be sent.
+          # Name of the heroku application to which the build is to be sent out.
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
 
           # (Optional, default: "./")
