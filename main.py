@@ -34,22 +34,6 @@ class HelloEndpoint(Resource):
 
         return data
 
-class HelloBulti(Resource):
-    """
-    Test API Endpoint
-    """
-    def get(self):
-        """
-        Getter for hello world
-        """
-        data={"data": "Hi there, Moritz Bulthaub!"}
-
-        return data
-
-api.add_resource(HelloWorld,'/hello')
-api.add_resource(HelloEndpoint,'/endpoint')
-
-
 if __name__=='__main__':
     cfg_port = os.getenv('PORT', "5000")
 
