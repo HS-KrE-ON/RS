@@ -35,6 +35,7 @@ class HelloEndpoint(Resource):
         return data
     
 api.add_resource(HelloWorld,'/hello')
+
 api.add_resource(HelloEndpoint,'/endpoint')    
 
 if __name__=='__main__':
