@@ -34,7 +34,7 @@ class HelloEndpoint(Resource):
 
         return data
     
-api.add_resource(HelloWorld,'/hello')   
+#api.add_resource(HelloWorld,'/hello')   
 
 if __name__=='__main__':
     cfg_port = os.getenv('PORT', "5000")
