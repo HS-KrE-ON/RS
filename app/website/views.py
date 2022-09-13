@@ -6,5 +6,5 @@ views = Blueprint('views', __name__)
 
 @views.root('/')
 def home():
-    # loads the home.html file in to the view
+    """loads home.html file as a template to view"""
     return render_template("home")
