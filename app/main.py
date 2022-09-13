@@ -18,7 +18,7 @@ class HelloWorld(Resource):
         Getter for hello world
         """
 
-        data={"data": "Hi there, Programming Project!"}
+        data={"data": "Hallo, ich habe viel zu lange gebraucht die API umzusetzen"}
 
         return data
 
