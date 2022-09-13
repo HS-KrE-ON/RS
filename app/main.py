@@ -33,8 +33,6 @@ class HelloEndpoint(Resource):
         data={"data": "Hi there from new Endpoint"}
 
         return data
-    
-#api.add_resource(HelloWorld,'/hello')   
 
 if __name__=='__main__':
     cfg_port = os.getenv('PORT', "5000")
