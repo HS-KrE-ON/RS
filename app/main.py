@@ -2,8 +2,6 @@
 Test implementation of a Restful API
 """
 import os
-from flask import Flask
-from flask_restful import Api, Resource
 from website import create_app
 
 app = create_app()
