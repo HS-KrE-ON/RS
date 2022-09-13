@@ -1,3 +1,4 @@
+"""Module establishing different website views"""
 # pylint: disable=E1101
 from flask import Blueprint, render_template
 
