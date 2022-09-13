@@ -18,7 +18,7 @@ class HelloWorld(Resource):
         Getter for hello world
         """
 
-        data={"data": "Hallo, endlich klappt diese scheiss api"}
+        data={"data": "Hallo, endlich klappt diese scheiss api mit dem richtigen Namen"}
 
         return data
 
