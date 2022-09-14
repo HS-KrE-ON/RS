@@ -9,7 +9,9 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     """loads home.html file as a template to view"""
-    return render_template('home.html')
+    statement = 'Hello Wordl!'
+    #render_template('home.html')
+    return statement
 
 if __name__=='__main__':
     cfg_port = os.getenv('PORT', "5000")
