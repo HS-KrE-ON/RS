@@ -2,7 +2,7 @@
 Test implementation of a Restful API
 """
 import os
-from flask import Flask, render_template
+from flask import Flask #render_template
 
 app = Flask(__name__)
 
