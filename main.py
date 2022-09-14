@@ -7,8 +7,8 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-def home():
-    """loads home.html file as a template to view"""
+def hello():
+    """loads .html file as a template to view"""
     statement = "hello world!"
     return statement
 
