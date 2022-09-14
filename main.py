@@ -12,6 +12,11 @@ def home():
     statement = "hello world!"
     return statement
 
+@app.route('/home')
+def home():
+    """loads home.html file as a template to view"""
+    return render_template('home.html')
+
 if __name__=='__main__':
     cfg_port = os.getenv('PORT', "5000")
     app.run(host="0.0.0.0", port=cfg_port)
