@@ -10,4 +10,4 @@ RUN pip install -r requirements.txt
 WORKDIR /
 COPY / .
 
-ENTRYPOINT ["python3", "main.py"]
+ENTRYPOINT ["python3", "app.py"]
