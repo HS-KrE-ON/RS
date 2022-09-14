@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    """loads home.html file as a template to view""" 
+    """loads home.html file as a template to view"""
     return render_template('home.html')
 
 if __name__=='__main__':
