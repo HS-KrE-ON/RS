@@ -1,3 +1,3 @@
 # RecommendationSystem
 Kommentar
-https://rs-api-end.herokuapp.com/hello
+https://rs-api-end.herokuapp.com/home
