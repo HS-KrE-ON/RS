@@ -16,6 +16,7 @@ body {
     transition: transform 450ms;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+    margin-top: 3em;
 }
 
 .row__posters {
