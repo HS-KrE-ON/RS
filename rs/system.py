@@ -1,4 +1,3 @@
-"""Import von movie_titles"""
 import pandas as pd
 df = pd.read_csv(
     "https://raw.githubusercontent.com/HS-KrE-ON/RS/main/archive/movie_titles.csv",
