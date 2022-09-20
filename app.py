@@ -12,7 +12,8 @@ def hello():
     """loads .html file as a template to view"""
     df1 = pd.read_csv("https://raw.githubusercontent.com/HS-KrE-ON/RS/main/archive/movie_titles.csv"
                 ,encoding = "ISO-8859-1", on_bad_lines='skip')
-    return df1.to_html()
+    df2 = df1.head(10)
+    return df2.to_html()
 
 @app.route('/home')
 def home():
