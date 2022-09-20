@@ -4,4 +4,5 @@ df = pd.read_csv(
                  encoding = "ISO-8859-1", on_bad_lines='skip')
 df1 = df.head(10)
 df2 = df1.to_html()
-print(df2)
+def show():
+    print(df2)
