@@ -10,8 +10,8 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     """loads .html file as a template to view"""
-    df1 = pd.read_csv("https://raw.githubusercontent.com/HS-KrE-ON/RS/main/archive/movie_titles.csv",
-                 encoding = "ISO-8859-1", on_bad_lines='skip')
+    df1 = pd.read_csv("https://raw.githubusercontent.com/HS-KrE-ON/RS/main/archive/movie_titles.csv"
+                ,encoding = "ISO-8859-1", on_bad_lines='skip')
     return df1.to_html()
 
 @app.route('/home')
