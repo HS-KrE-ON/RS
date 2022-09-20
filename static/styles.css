@@ -14,8 +14,6 @@ body {
     max-height: 400px;
     margin-right: 5px;
     transition: transform 450ms;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
 }
 
 .row__posters {
@@ -23,6 +21,8 @@ body {
     overflow-y: hidden;
     overflow-x: scroll;
     padding: 20px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 .row__poster:hover {
