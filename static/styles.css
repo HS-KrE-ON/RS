@@ -23,7 +23,6 @@ body {
     overflow-y: hidden;
     overflow-x: scroll;
     padding: 20px;
-    margin-top: 3rem;
 }
 
 .row__poster:hover {
@@ -41,6 +40,7 @@ body {
 .row {
     color: white;
     margin-right: 20px;
+    margin-top: 3rem;
 }
 
 .banner {
