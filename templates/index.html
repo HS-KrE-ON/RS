@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix</title>
     <link rel="stylesheet" href="static/styles.css" />
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <py-env>
+        -pandas
+    </py-env>
 </head>
 <body>
 
@@ -33,6 +38,10 @@
             <img src="images/large-movie7.jpg" alt="" class="row__poster row__posterLarge">
             <img src="images/large-movie8.jpg" alt="" class="row__poster row__posterLarge">
         </div>
+    </div>
+
+    <div class="pythonscript">
+        <py-script src="rs/system.py"></py-script>
     </div>
 </body>
 </html>
