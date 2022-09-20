@@ -7,7 +7,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/home')
 def hello():
     """loads .html file as a template to view"""
     df1 = pd.read_csv("https://raw.githubusercontent.com/HS-KrE-ON/RS/main/archive/movie_titles.csv"
@@ -15,10 +15,10 @@ def hello():
     df2 = df1.head(10)
     return df2.to_html()
 
-@app.route('/home')
+@app.route('/')
 def home():
     """loads home.html file as a template to view"""
-    return render_template('base.html')
+    return render_template('index.html')
 
 if __name__=='__main__':
     cfg_port = os.getenv('PORT', "5000")
