@@ -45,7 +45,7 @@ body {
 }
 
 .banner {
-    background-image: url('banner.jpg');
+    background-image: url('images/banner.jpg');
     background-size: cover;
     background-position: center center;
     color: white;
@@ -165,4 +165,16 @@ body {
   font-size: 20px;
   color: #d11313;
   cursor: pointer;
+}
+
+.output{
+  background-color: #423f3f;
+  background-size: cover;
+  background-position: center center;
+  color: white;
+  font-size: larger;
+  object-fit: contain;
+  height: 200px;
+  width: 200px;
+  margin: 50px;
 }

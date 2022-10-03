@@ -3,6 +3,7 @@ const searchWrapper = document.querySelector(".search-input");
 const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
 const icon = searchWrapper.querySelector(".icon");
+const out1 = document.getElementById('output1');
 let linkTag = searchWrapper.querySelector("a");
 let webLink;
 
@@ -40,9 +41,7 @@ function select(element){
     let selectData = element.textContent;
     inputBox.value = selectData;
     icon.onclick = ()=>{
-        webLink = `https://www.google.com/search?q=${selectData}`;
-        linkTag.setAttribute("href", webLink);
-        linkTag.click();
+        out1.innerHTML = selectData;
     }
     searchWrapper.classList.remove("active");
 }
