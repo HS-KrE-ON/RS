@@ -45,7 +45,7 @@ body {
 }
 
 .banner {
-    background-image: url('images/banner.jpg');
+    background-image: url('static/banner.jpg');
     background-size: cover;
     background-position: center center;
     color: white;
