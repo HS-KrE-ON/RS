@@ -61,7 +61,7 @@ function showSuggestions(list) {
 function generateListItems(arg) {
   let items = "";
   for (let i = 0; i < arg.length; i++) {
-    items += `<li>${arg[i]}</li>`;
+    items += `<li>${arg[i]}<button class = "button__remove">Remove</button</li>`;
   }
   return items;
 }
