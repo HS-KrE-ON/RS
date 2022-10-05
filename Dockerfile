@@ -2,11 +2,12 @@ FROM ubuntu
 
 # Install dependencies
 RUN apt-get update && apt-get -y install python3 python3-pip
+RUN pip install flask
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-WORKDIR /app
-COPY app/ .
+WORKDIR /
+COPY / .
 
-ENTRYPOINT ["python3", "main.py"]
+ENTRYPOINT ["python3", "app.py"]
