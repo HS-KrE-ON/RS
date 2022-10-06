@@ -71,7 +71,10 @@ function submitMovies(movies) {
     $.get(
       url = 'post',
       data = {moviearr:movies},
-      success = function(data){}
+      success = function(data){
+        parsed_data = JSON.parse(data)
+        alert('page content: ' + parsed_data);
+      }
     )
   }
 }
