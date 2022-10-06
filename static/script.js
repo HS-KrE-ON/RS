@@ -3,7 +3,7 @@ const searchWrapper = document.querySelector(".search-input");
 const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
 const icon = searchWrapper.querySelector(".icon");
-const submit = searchWrapper.querySelector(".submit");
+const submit = searchWrapper.querySelector(".smmovies");
 let linkTag = searchWrapper.querySelector("a");
 let movies = [];
 
@@ -66,11 +66,12 @@ function generateListItems(arg) {
   return items;
 }
 
-$("#submit").click(function(movies){
-  $.ajax({
-    url:'{{url_for("post")}}',
-    type:'post',
-    data:{moviearr:movies},
-    success:function(res){}
-  });
-});
+function submitMovies(movies) {
+  submit.onclick = () => {
+    $.get(
+      url = 'post',
+      data = {moviearr:movies},
+      success = function(data){}
+    )
+  }
+}

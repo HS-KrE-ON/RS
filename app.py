@@ -13,7 +13,7 @@ def home():
     return render_template('index.html')
 
 
-@app.route("/post", methods=['GET', 'POST'])
+@app.route("/post1", methods=['GET', 'POST'])
 def array_post():
     """loads post array"""
     if request.method == 'POST':
@@ -22,10 +22,9 @@ def array_post():
 
 
 @app.route("/post", methods=['GET', 'POST'])
-def array_post():
+def post():
     """loads post array"""
-    if request.method == 'POST':
-        movies = request.form.getlist("movies[]")
+    movies = request.args.get("movies")
     return jsonify(movies)
 
 
