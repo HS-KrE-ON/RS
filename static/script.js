@@ -66,8 +66,8 @@ function generateListItems(arg) {
   return items;
 }
 
-submit.onclick = (movies) => {
-  console.log('der buuton wurde gedrückt');
+function submitMovies(movies){
+  console.log('der button wurde gedrückt');
   $.get(
     url = 'post',
     data = {moviearr:movies},
