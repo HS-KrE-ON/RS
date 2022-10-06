@@ -2,7 +2,7 @@
 Test implementation of a Restful API
 """
 import os
-from flask import Flask, render_template, request
+from flask import Flask, jsonify, render_template, request, url_for
 
 app = Flask(__name__)
 
@@ -19,6 +19,14 @@ def array_post():
     if request.method == 'POST':
         moviearray = request.form.getlist("movies[]")
     return moviearray
+
+
+@app.route("/post", methods=['GET', 'POST'])
+def array_post():
+    """loads post array"""
+    if request.method == 'POST':
+        movies = request.form.getlist("movies[]")
+    return jsonify(movies)
 
 
 if __name__ == '__main__':

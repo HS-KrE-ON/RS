@@ -38,8 +38,7 @@ function select(element) {
   icon.onclick = () => {
     movies.push(selectData);
     console.log(movies);
-    document.querySelector(".output").innerHTML =
-      `
+    document.querySelector(".output").innerHTML =`
 <ol>
 ${generateListItems(movies)}
 </ol>
@@ -67,13 +66,11 @@ function generateListItems(arg) {
   return items;
 }
 
-function submitMovies(movies) {
+$("#submit").click(function(movies){
   $.ajax({
-    url: '/post',
-    type: 'post',
-    data: {
-      movies: movies
-    },
-    success: function (res) { }
+    url:'{{url_for("post")}}',
+    type:'post',
+    data:{moviearr:movies},
+    success:function(res){}
   });
-}
+});
