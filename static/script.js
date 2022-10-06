@@ -71,11 +71,10 @@ function generateListItems(arg) {
 
 function submitMovies(){
   console.log('der button wurde gedrückt');
-  moviearray = movies;
   $.ajax({
     url : 'post',
     data : {
-      moviearr: moviearray
+      moviearr: movies
     },
     success: function(data){
       parsed_data = JSON.parse(data)
