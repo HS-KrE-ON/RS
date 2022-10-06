@@ -74,7 +74,7 @@ submit.onclick = () => {
     data : {
       moviearr: moviearray
     },
-    success = function(data){
+    success: function(data){
       parsed_data = JSON.parse(data)
       alert('page contents: ' + parsed_data);
     }
