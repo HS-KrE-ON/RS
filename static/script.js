@@ -3,7 +3,7 @@ const searchWrapper = document.querySelector(".search-input");
 const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
 const icon = searchWrapper.querySelector(".icon");
-const submit = searchWrapper.querySelector(".submit");
+const out1 = document.getElementById("output1");
 let linkTag = searchWrapper.querySelector("a");
 let movies = [];
 
@@ -38,7 +38,7 @@ function select(element) {
   icon.onclick = () => {
     movies.push(selectData);
     console.log(movies);
-    document.querySelector(".output").innerHTML =`
+    document.querySelector(".output").innerHTML = `
 <ol>
 ${generateListItems(movies)}
 </ol>
