@@ -4,7 +4,6 @@ const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
 const icon = searchWrapper.querySelector(".icon");
 const submit = searchWrapper.querySelector(".submit");
-let linkTag = searchWrapper.querySelector("a");
 let movies = [];
 
 // if user press any key and release
