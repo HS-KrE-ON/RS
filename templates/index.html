@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,16 @@
     <title>Netflix</title>
     <link rel="stylesheet" href="static/styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
+
 <body>
 
     <div class="navbar" id="nav">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Logonetflix.png/800px-Logonetflix.png?20170904093427" alt="" class="nav__logo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117" alt="" class="nav__avatar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Logonetflix.png/800px-Logonetflix.png?20170904093427"
+            alt="" class="nav__logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117" alt=""
+            class="nav__avatar">
     </div>
 
     <div class="banner">
@@ -24,23 +28,25 @@
 
     <div class="wrapper">
         <div class="search-input">
-          <a href="" target="_blank" hidden></a>
-          <input type="text" id="searchin" placeholder="Search a movie..">
-          <div class="autocom-box">
-            <!-- here list are inserted from javascript -->
-          </div>
-          <div class="icon"><i class="fas fa-plus"></i></div>
+            <a href="" target="_blank" hidden></a>
+            <input type="text" id="searchin" placeholder="Search a movie..">
+            <div class="autocom-box">
+                <!-- here list are inserted from javascript -->
+            </div>
+            <div class="icon"><i class="fas fa-plus"></i></div>
         </div>
-        <button class="submit">Submit</button></div>
-      </div>
-    
-      <div class="row">
-        <h2 class="row__title">Ausgewählte Filme</h2>  
+    </div>
+
+    <div class="smmovies"><button class="submit">Submit</button></div>
+    </div>
+
+    <div class="row">
+        <h2 class="row__title">Ausgewählte Filme</h2>
         <ul class="output" id="movies"></ul>
     </div>
-  
-       <script src="static/suggestions.js"></script> 
-       <script src="static/script.js"></script>  
+
+    <script src="static/suggestions.js"></script>
+    <script src="static/script.js"></script>
 
     <div class="row">
         <h2 class="row__title">FILMEMPFEHLUNGEN</h2>
@@ -60,4 +66,5 @@
         <py-script src="rs/system.py"></py-script>
     </div> -->
 </body>
+
 </html>
