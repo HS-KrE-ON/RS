@@ -24,7 +24,7 @@ def array_post():
 @app.route("/post", methods=['GET', 'POST'])
 def post():
     """loads post array"""
-    movies = request.form.getlist("movies[]")
+    movies = request.form.getlist("moviearray[]")
     return jsonify(movies)
 
 

@@ -66,11 +66,14 @@ function generateListItems(arg) {
   return items;
 }
 
-function submitMovies(movies){
+submit.onclick = () => {
   console.log('der button wurde gedrückt');
+  moviearray = movies;
   $.ajax({
     url : 'post',
-    data : {moviearr:movies},
+    data : {
+      moviearr: moviearray
+    },
     success = function(data){
       parsed_data = JSON.parse(data)
       alert('page contents: ' + parsed_data);
