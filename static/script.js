@@ -74,9 +74,8 @@ function submitMovies(){
     data : {
       moviearr: movies
     },
-    success: function(moviearr){
-      parsed_data = JSON.parse(moviearr)
-      alert('page contents: ' + parsed_data);
+    success: function(res){
+   
     }
   })
 }
