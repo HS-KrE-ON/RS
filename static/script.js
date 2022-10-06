@@ -3,7 +3,7 @@ const searchWrapper = document.querySelector(".search-input");
 const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
 const icon = searchWrapper.querySelector(".icon");
-const submit = searchWrapper.querySelector(".smmovies");
+const submit = searchWrapper.querySelector(".submit");
 let linkTag = searchWrapper.querySelector("a");
 let movies = [];
 

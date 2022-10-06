@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="static/styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="static/suggestions.js"></script>
+    <script src="static/script.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -37,34 +40,12 @@
         </div>
     </div>
 
-    <div class="smmovies"><input type="button" class="submit" onclick="submitMovies(movies)"></button></div>
+    <div class="submit"><input type="button" onclick="submitMovies(movies)"></button></div>
 
     <div class="row">
         <h2 class="row__title">Ausgewählte Filme</h2>
         <ul class="output" id="movies"></ul>
     </div>
-
-    <script src="static/suggestions.js"></script>
-    <script src="static/script.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-    <div class="row">
-        <h2 class="row__title">FILMEMPFEHLUNGEN</h2>
-        <div class="row__posters">
-            <img src="static/large-movie1.jpg" alt="" class="row__poster row__posterLarge">
-            <img src="static/large-movie2.jpg" alt="" class="row__poster row__posterLarge">
-            <img src="static/large-movie3.jpg" alt="" class="row__poster row__posterLarge">
-            <img src="static/large-movie4.jpg" alt="" class="row__poster row__posterLarge">
-            <img src="static/large-movie5.jpg" alt="" class="row__poster row__posterLarge">
-            <img src="static/large-movie6.jpg" alt="" class="row__poster row__posterLarge">
-            <img src="static/large-movie7.jpg" alt="" class="row__poster row__posterLarge">
-            <img src="static/large-movie8.jpg" alt="" class="row__poster row__posterLarge">
-        </div>
-    </div>
-
-    <!-- <div class="pythonscript">
-        <py-script src="rs/system.py"></py-script>
-    </div> -->
 </body>
 
 </html>
