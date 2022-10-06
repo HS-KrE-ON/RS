@@ -2,23 +2,26 @@
 Test implementation of a Restful API
 """
 import os
-import pandas as pd
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for
+from script import movies
 
 app = Flask(__name__)
 
-@app.route('/home')
-def hello():
-    """loads .html file as a template to view"""
-    df1 = pd.read_csv("https://raw.githubusercontent.com/HS-KrE-ON/RS/main/archive/movie_titles.csv"
-                ,encoding = "ISO-8859-1", on_bad_lines='skip')
-    df2 = df1.head(10)
-    return df2.to_html()
-
-@app.route('/')
+@app.route('/', methods=["POST", "GET"])
 def home():
     """loads home.html file as a template to view"""
-    return render_template('index.html')
+    if request.method == "POST":
+        movies = request.form["movie_arr"]
+    else:    
+        return render_template('index.html')
+
+@app.route("/post", methods = ['GET', 'POST'])
+def array_post():
+    if request.method == 'POST':
+        moviearray = request.form.getlist("movies[]")
+    for movie in moviearray:
+        print(movie)
+    return ""
 
 if __name__=='__main__':
     cfg_port = os.getenv('PORT', "5000")

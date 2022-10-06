@@ -3,7 +3,7 @@ const searchWrapper = document.querySelector(".search-input");
 const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
 const icon = searchWrapper.querySelector(".icon");
-const out1 = document.getElementById("output1");
+const submit = searchWrapper.querySelector(".submit");
 let linkTag = searchWrapper.querySelector("a");
 let movies = [];
 
@@ -38,10 +38,13 @@ function select(element) {
   icon.onclick = () => {
     movies.push(selectData);
     console.log(movies);
-    document.querySelector(".output").innerHTML = `
+    document.querySelector(".output").innerHTML =
+      `
+<form action="#" method="post"
 <ol>
 ${generateListItems(movies)}
-</ol>
+</ol><input type="submit" value="submit"/>
+</form>
 `;
   };
   searchWrapper.classList.remove("active");
@@ -64,4 +67,15 @@ function generateListItems(arg) {
     items += `<li>${arg[i]}</li>`;
   }
   return items;
+}
+
+submit.onclick = (movies) => {
+  $.ajax({
+    url: '/post',
+    type: 'post',
+    data: {
+      movies: movies
+    },
+    success: function (res) { }
+  });
 }
