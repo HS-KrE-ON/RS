@@ -66,16 +66,14 @@ function generateListItems(arg) {
   return items;
 }
 
-function submitMovies(movies) {
-  submit.onclick = () => {
-    console.log('der buuton wurde gedrückt');
-    $.get(
-      url = 'post',
-      data = {moviearr:movies},
-      success = function(data){
-        parsed_data = JSON.parse(data)
-        alert('page contents: ' + parsed_data);
-      }
-    )
-  }
+submit.onclick = (movies) => {
+  console.log('der buuton wurde gedrückt');
+  $.get(
+    url = 'post',
+    data = {moviearr:movies},
+    success = function(data){
+      parsed_data = JSON.parse(data)
+      alert('page contents: ' + parsed_data);
+    }
+  )
 }
