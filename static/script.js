@@ -68,7 +68,7 @@ function generateListItems(arg) {
 }
 
 function submitMovies(){
-  console.log('der button wurde gedrückt');
+  console.log('der button wurde gedrückt' + movies);
   $.ajax({
     url : 'post',
     data : {
