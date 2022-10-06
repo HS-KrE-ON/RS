@@ -5,8 +5,10 @@ const suggBox = searchWrapper.querySelector(".autocom-box");
 const icon = searchWrapper.querySelector(".icon");
 const out1 = document.getElementById("output1");
 const submit = searchWrapper.querySelector(".submit");
+const button = document.querySelector("input");
 let linkTag = searchWrapper.querySelector("a");
 let movies = [];
+button.addEventListener('click', submitMovies);
 
 // if user press any key and release
 inputBox.onkeyup = (e) => {
@@ -67,7 +69,7 @@ function generateListItems(arg) {
   return items;
 }
 
-submit.onclick = () => {
+function submitMovies(){
   console.log('der button wurde gedrückt');
   moviearray = movies;
   $.ajax({
