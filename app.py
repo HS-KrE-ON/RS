@@ -18,9 +18,7 @@ def array_post():
     """loads post array"""
     if request.method == 'POST':
         moviearray = request.form.getlist("movies[]")
-    for movie in moviearray:
-        print(movie)
-    return ""
+    return moviearray
 
 
 if __name__ == '__main__':

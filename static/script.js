@@ -40,11 +40,9 @@ function select(element) {
     console.log(movies);
     document.querySelector(".output").innerHTML =
       `
-<form action="#" method="post"
 <ol>
 ${generateListItems(movies)}
-</ol><input type="submit" value="submit"/>
-</form>
+</ol>
 `;
   };
   searchWrapper.classList.remove("active");
@@ -69,7 +67,7 @@ function generateListItems(arg) {
   return items;
 }
 
-submit.onclick = (movies) => {
+function submitMovies(movies) {
   $.ajax({
     url: '/post',
     type: 'post',
