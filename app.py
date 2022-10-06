@@ -25,7 +25,9 @@ def array_post():
 def post():
     """loads post array"""
     movies = request.form.getlist("moviearray[]")
-    return jsonify(movies)
+    for movie in movies:
+        print(movie)
+    return ""
 
 
 if __name__ == '__main__':
