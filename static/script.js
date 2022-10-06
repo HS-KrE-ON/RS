@@ -68,12 +68,12 @@ function generateListItems(arg) {
 
 function submitMovies(movies){
   console.log('der button wurde gedrückt');
-  $.get(
-    url = 'post',
-    data = {moviearr:movies},
+  $.ajax({
+    url : 'post',
+    data : {moviearr:movies},
     success = function(data){
       parsed_data = JSON.parse(data)
       alert('page contents: ' + parsed_data);
     }
-  )
+  })
 }
