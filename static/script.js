@@ -4,6 +4,7 @@ const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
 const icon = searchWrapper.querySelector(".icon");
 const out1 = document.getElementById("output1");
+const submit = searchWrapper.querySelector(".submit");
 let linkTag = searchWrapper.querySelector("a");
 let movies = [];
 
