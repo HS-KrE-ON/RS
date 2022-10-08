@@ -26,7 +26,7 @@ def post():
     """loads post array"""
     movies = request.form.getlist("moviearray[]")
     text = movies.toString()
-    return print(text)
+    return render_template('post.html')
 
 
 if __name__ == '__main__':
