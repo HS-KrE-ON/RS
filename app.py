@@ -3,6 +3,7 @@ Test implementation of a Restful API
 """
 import os
 from flask import Flask, render_template, request
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -25,9 +26,8 @@ def array_post():
 def post():
     """loads post array"""
     movies = request.form.getlist("moviearray[]")
-    for movie in movies:
-        print(movie)
-    return ""
+    text = movies.toString()
+    return text
 
 
 if __name__ == '__main__':
