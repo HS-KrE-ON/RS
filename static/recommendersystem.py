@@ -15,7 +15,7 @@ def make_recommendation (fav_movie):
     neighbours = []
     distances = []
 
-    idx = fuzzy_matching(movie_to_idx, fav_movie, verbose=True)
+    idx = fav_movie
 
     df_neighbours = pd.read_csv('neighbours.csv')
     df_distances = pd.read_csv('distances.csv')
@@ -75,7 +75,8 @@ def process_recommendations(list_of_entries):
     '''
     for ele in list_of_entries:
         my_favorite = [ele]
-        make_recommendation(fav_movie=my_favorite)
+        idx = fuzzy_matching(movie_to_idx, fav_movie=my_favorite, verbose=True)
+        make_recommendation(idx)
 
     sort_combinations(combination)
 
