@@ -29,9 +29,7 @@ def make_recommendation (fav_movie):
     raw_recommends = list(zip(neighbours, distances))[:0:-1]
 
     combine_recommendation(raw_recommends)
-    raw_recommends.sort(key=lambda tup:tup[1], reverse=False)
-    #print recommendations
-    #print('Folgende Filme werden dir empfohlen, da du {} gesehen hast:'.format(fav_movie))
+    return neighbours
 
 def combine_recommendation(raw_recommends):
     '''
@@ -39,6 +37,7 @@ def combine_recommendation(raw_recommends):
     '''
     for _, (idx, dist) in enumerate(raw_recommends):
         combination.append((idx,dist))
+    return combination
 
 def sort_combinations(list_combinations):
     '''
@@ -47,9 +46,8 @@ def sort_combinations(list_combinations):
     # pylint: disable=unused-argument
     list_combinations.sort(key=lambda tup:tup[1], reverse=False)
     list_combinations = list_combinations[:10]
-
-    print("\nAufgrund der Filmkombination können folgende Filme vorgeschlagen werden:\n")
     print_recommendations(list_combinations)
+    return frontend_input
 
 def print_recommendations(list_recommendations):
     '''
@@ -58,15 +56,16 @@ def print_recommendations(list_recommendations):
     # pylint: disable=consider-using-f-string
     mapper=movie_to_idx
     reverse_mapper = {v: k for k, v in mapper.items()}
-    frontend_input=[]
     #print(list)
+    print("\nAufgrund der Filmkombination können folgende Filme vorgeschlagen werden:\n")
     for i, (idx, dist) in enumerate(list_recommendations):
         dist= (1-dist)*100
         print('{0}: {1}, with accordance of {2}'.format(i+1,
                                                         reverse_mapper[idx],
                                                         round(dist,2))+'%')
         #input for frontend:
-        frontend_input.append((idx,dist))
+        frontend_input.append(reverse_mapper[idx])
+        #frontend_input.append((reverse_mapper[idx],str(round(dist,2))+'%'))
     return frontend_input
 
 def process_recommendations(list_of_entries):
@@ -79,6 +78,8 @@ def process_recommendations(list_of_entries):
         make_recommendation(idx)
 
     sort_combinations(combination)
+    return frontend_input
+    #print_recommendations(combination)
 
 def fuzzy_matching(mapper, fav_movie, verbose=True):
     """
@@ -103,10 +104,8 @@ def fuzzy_matching(mapper, fav_movie, verbose=True):
     return match_tuple[0][1]
 
 #Entry for recommendations
-my_entry = ['Dinosaur Planet (2003)',
-            'Isle of Man TT 2004 Review (2004)',
-            'Sick (1997)',
-            '7 Seconds (2005)',
-            'Boycott (2001)']
-combination = []
-process_recommendations(my_entry)
+def input(array):
+    combination = []
+    frontend_input=[]
+    process_recommendations(array)
+    print(frontend_input)
