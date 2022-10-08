@@ -2,7 +2,7 @@
 Test implementation of a Restful API
 """
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from recommendersystem import input
 
 app = Flask(__name__)
