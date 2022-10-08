@@ -3,6 +3,7 @@ import pickle as pkl
 import pandas as pd
 from fuzzywuzzy import fuzz
 
+# pylint: disable=consider-using-with
 open_file = open('movie_mapper.pkl', "rb")
 movie_to_idx = pkl.load(open_file)
 open_file.close()
@@ -83,6 +84,7 @@ def fuzzy_matching(mapper, fav_movie, verbose=True):
     return the closest match via fuzzy ratio. If no match found, return None
     """
     # pylint: disable=unused-argument
+    # pylint: disable=inconsistent-return-statements
     match_tuple = []
     # get match
     for title, idx in mapper.items():
