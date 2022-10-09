@@ -19,6 +19,7 @@ def home():
 def array_post():
     """loads post array"""
     moviearray = request.form.getlist('moviearr[]')
+    print(moviearray)
     return {"movies": moviearray}
 
 
