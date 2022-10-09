@@ -74,12 +74,14 @@ function submitMovies(){
     data : {
       moviearr: movies
     },
-    success: function(res) { console.log("Flask input "+ res);}
+    success: function(res) { 
+      console.log("Flask input "+ res);
+      document.querySelector(".output1").innerHTML = `
+      <ol>
+      ${generateListItems(res)}
+      </ol>
+      `;
+    }
     }
   )
-  document.querySelector(".output1").innerHTML = `
-  <ol>
-  ${generateListItems(results)}
-  </ol>
-  `;
 }

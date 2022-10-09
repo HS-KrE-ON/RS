@@ -19,8 +19,7 @@ def home():
 def array_post():
     """loads post array"""
     movies = request.form.getlist('moviearr[]')
-    results = recommendate(movies)
-    return results
+    return recommendate(movies)
 
 
 @app.route('/get', methods=['GET', 'POST'])
