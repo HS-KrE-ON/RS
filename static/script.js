@@ -72,7 +72,7 @@ function submitMovies(){
   $.ajax({
     url : 'post',
     data : {
-      moviearr: movies
+      moviearr: json.stringify(movies)
     },
     success: function(res) { console.log(res);}
     }
