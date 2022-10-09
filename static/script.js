@@ -76,5 +76,4 @@ function submitMovies(){
     success: function(res){
     }
   })
-  console.log(moviearr)
 }
