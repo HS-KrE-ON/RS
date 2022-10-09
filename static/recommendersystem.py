@@ -83,6 +83,7 @@ def process_recommendations(list_of_entries):
     sort_combinations(combination)
     return frontend_input
     #print_recommendations(combination)
+# pylint: disable=inconsistent-return-statements
 
 def fuzzy_matching(mapper, fav_movie, verbose=True):
     """
