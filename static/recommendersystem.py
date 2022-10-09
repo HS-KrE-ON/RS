@@ -113,4 +113,5 @@ def recommendate(array):
     """
     frontend_input.clear()
     process_recommendations(array)
+    array=[]
     return frontend_input
