@@ -23,13 +23,13 @@ def make_recommendation (fav_movie):
     df_neighbours = pd.read_csv('/data/neighbours_increase.csv')
     df_distances = pd.read_csv('/data/distances.csv')
 
-    neighbours = df_neighbours.iloc[idx]
-    neighbours = list(neighbours.tolist())
+    neighbours = df_neighbours.iloc[idx-1]
+    neighbours = list(neighbours.tolist())[:0:-1]
 
-    distances = df_distances.iloc[idx]
-    distances = list(distances.tolist())
+    distances = df_distances.iloc[idx-1]
+    distances = list(distances.tolist())[:0:-1]
 
-    raw_recommends = list(zip(neighbours, distances))[:0:-1]
+    raw_recommends = list(zip(neighbours, distances))
 
     combine_recommendation(raw_recommends)
     return neighbours
