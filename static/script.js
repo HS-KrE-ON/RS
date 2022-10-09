@@ -73,7 +73,7 @@ function submitMovies(){
     data : {
       moviearr: JSON.stringify(movies)
     },
-    success: function(res){
+    success: function(data) { console.log(data);}
     }
-  })
+  )
 }
