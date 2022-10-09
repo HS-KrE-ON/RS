@@ -68,7 +68,6 @@ function generateListItems(arg) {
 }
 
 function submitMovies(){
-  console.log(movies)
   $.ajax({
     url : 'post',
     type : 'POST',
