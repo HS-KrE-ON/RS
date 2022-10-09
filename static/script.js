@@ -78,8 +78,8 @@ function submitMovies(){
     }
   )
   document.querySelector(".output1").innerHTML = `
-<ol>
-${generateListItems(res)}
-</ol>
-`;
+  <ol>
+  ${generateListItems(results)}
+  </ol>
+  `;
 }
