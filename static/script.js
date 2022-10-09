@@ -70,7 +70,7 @@ function generateListItems(arg) {
 function submitMovies(){
   console.log('der button wurde gedrückt' + movies);
   $.ajax({
-    url : 'get',
+    url : 'post',
     data : {
       moviearr: movies
     },
