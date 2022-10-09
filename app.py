@@ -2,7 +2,7 @@
 Test implementation of a Restful API
 """
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from static.recommendersystem import recommendate
 
 
@@ -18,7 +18,7 @@ def home():
 @app.route('/post', methods=['GET', 'POST'])
 def array_post():
     """loads post array"""
-    moviearray = request.form.getlist('moviearr')
+    moviearray = jsonify(request.form.getlist('moviearr'))
     return {"movies": moviearray}
 
 
