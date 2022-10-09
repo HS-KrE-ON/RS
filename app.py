@@ -27,7 +27,8 @@ def get():
     """loads post array"""
     # movies = request.form.getlist('moviearr[]')
     moviearray = ["Koma (2004)", "Lilo and Stitch (2002)"]
-    return {"result": recommendate(moviearray)}
+    result = recommendate(moviearray)
+    return result
 
 
 if __name__ == '__main__':
