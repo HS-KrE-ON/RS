@@ -69,7 +69,7 @@ function generateListItems(arg) {
 
 function submitMovies(){
   print(movies)
-  $.ajax({
+  $.get({
     url : 'post',
     data : {
       moviearr: JSON.stringify(movies)
