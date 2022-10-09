@@ -73,7 +73,7 @@ function submitMovies(){
     url : 'post',
     type : 'POST',
     data : {
-      moviearr: JSON.stringify(movies)
+      moviearr: movies
     },
     success: function(res) { console.log(res);}
     }
