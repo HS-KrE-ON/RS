@@ -8,6 +8,9 @@ open_file = open('/data/movie_mapper.pkl', "rb")
 movie_to_idx = pkl.load(open_file)
 open_file.close()
 
+combination = []
+frontend_input=[]
+
 def make_recommendation (fav_movie):
     """
     Get predictions from static knn model
@@ -105,7 +108,5 @@ def fuzzy_matching(mapper, fav_movie, verbose=True):
 
 #Entry for recommendations
 def input(array):
-    combination = []
-    frontend_input=[]
     process_recommendations(array)
     print(frontend_input)
