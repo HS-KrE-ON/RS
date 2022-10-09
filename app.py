@@ -26,11 +26,8 @@ def array_post():
 def get():
     """loads post array"""
     # movies = request.form.getlist('moviearr[]')
-    moviearray = []
-    moviearray = ["Koma (2004)", "Lilo and Stitch (2002)"]
-    result = []
-    result = recommendate(moviearray)
-    return result
+    moviearray = ["Dinosaur Planet (2003)"]
+    return recommendate(moviearray)
 
 
 if __name__ == '__main__':
