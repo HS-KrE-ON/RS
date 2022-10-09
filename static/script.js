@@ -77,4 +77,9 @@ function submitMovies(){
     success: function(res) { console.log("Flask input "+ res);}
     }
   )
+  document.querySelector(".output1").innerHTML = `
+<ol>
+${generateListItems(res)}
+</ol>
+`;
 }
