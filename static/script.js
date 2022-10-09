@@ -68,13 +68,12 @@ function generateListItems(arg) {
 }
 
 function submitMovies(){
-  print(movies)
-  $.get({
+  $.ajax({
     url : 'post',
     data : {
-      moviearr: JSON.stringify(movies)
+      moviearr: movies
     },
-    success: function(data) { console.log(data);}
+    success: function(res) { console.log(res);}
     }
   )
 }
