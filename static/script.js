@@ -67,7 +67,7 @@ function generateListItems(arg) {
   return items;
 }
 
-function submitMovies(){
+function submitMovies(movies){
   $.ajax({
     url : 'post',
     data : {
