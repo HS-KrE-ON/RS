@@ -107,7 +107,7 @@ def fuzzy_matching(mapper, fav_movie, verbose=True):
     return match_tuple[0][1]
 
 #Entry for recommendations
-def input(array):
+def recommendate(array):
     """
     return sorted movie neighbours
     """
