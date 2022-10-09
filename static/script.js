@@ -71,6 +71,7 @@ function submitMovies(){
   console.log(movies)
   $.ajax({
     url : 'post',
+    type : 'POST',
     data : {
       moviearr: JSON.stringify(movies)
     },
