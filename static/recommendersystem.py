@@ -108,5 +108,8 @@ def fuzzy_matching(mapper, fav_movie, verbose=True):
 
 #Entry for recommendations
 def input(array):
+    """
+    return sorted movie neighbours
+    """
     process_recommendations(array)
-    print(frontend_input)
+    return frontend_input
