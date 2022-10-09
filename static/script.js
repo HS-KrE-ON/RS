@@ -75,7 +75,7 @@ function submitMovies(){
     data : {
       moviearr: movies
     },
-    success: function(res) { console.log(res);}
+    success: function(res) { console.log("Flask input "+ res);}
     }
   )
 }
