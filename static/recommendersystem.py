@@ -111,5 +111,6 @@ def input(array):
     """
     return sorted movie neighbours
     """
+    frontend_input.clear()
     process_recommendations(array)
     return frontend_input
