@@ -25,8 +25,9 @@ def array_post():
 @app.route('/get', methods=['GET', 'POST'])
 def get():
     """loads post array"""
-    movies = request.form.getlist('moviearr[]')
-    return {"result": input(movies)}
+    # movies = request.form.getlist('moviearr[]')
+    moviearray = ["Koma (2004)", "Lilo and Stitch (2002)"]
+    return {"result": input(moviearray)}
 
 
 if __name__ == '__main__':
