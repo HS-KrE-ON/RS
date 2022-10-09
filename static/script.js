@@ -68,6 +68,8 @@ function generateListItems(arg) {
 }
 
 function submitMovies(){
+  print(movies)
+  print(moviesarr)
   $.ajax({
     url : 'post',
     data : {
