@@ -81,6 +81,7 @@ def process_recommendations(list_of_entries):
         make_recommendation(idx)
 
     sort_combinations(combination)
+    combination.clear()
     return frontend_input
     #print_recommendations(combination)
 # pylint: disable=inconsistent-return-statements
