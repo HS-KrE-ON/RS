@@ -3,3 +3,4 @@ Flask-RESTful
 gunicorn
 pandas
 numpy
+fuzzywuzzy

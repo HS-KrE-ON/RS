@@ -4,6 +4,7 @@ const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
 const icon = searchWrapper.querySelector(".icon");
 const out1 = document.getElementById("output1");
+const submit = searchWrapper.querySelector(".submit");
 let linkTag = searchWrapper.querySelector("a");
 let movies = [];
 
@@ -41,6 +42,7 @@ function select(element) {
     document.querySelector(".output").innerHTML = `
 <ol>
 ${generateListItems(movies)}
+<input type=button id=reove onclick=removeItem()>
 </ol>
 `;
   };
@@ -64,4 +66,27 @@ function generateListItems(arg) {
     items += `<li>${arg[i]}</li>`;
   }
   return items;
+}
+
+function submitMovies(){
+  $.ajax({
+    url : 'post',
+    type : 'POST',
+    data : {
+      moviearr: movies
+    },
+    success: function(res) { 
+      console.log("Flask input "+ res);
+      document.querySelector(".output1").innerHTML = `
+      <ol>
+      ${generateListItems(res)}
+      </ol>
+      `;
+    }
+    }
+  )
+}
+
+function removeItem(){
+  
 }

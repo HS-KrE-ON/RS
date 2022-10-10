@@ -36,27 +36,19 @@
       <div class="row">
         <h2 class="row__title">Ausgewählte Filme</h2>  
         <ul class="output" id="movies"></ul>
+
+        <form>
+            <input type="button" value="Submit" onclick="submitMovies()" />
+        </form>
+
+        <div class="row">
+            <h2 class="row__title">Filmempfehlungen</h2>  
+            <ul class="output1" id="movies"></ul>
     </div>
-  
+
        <script src="static/suggestions.js"></script> 
-       <script src="static/script.js"></script>  
+       <script src="static/script.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <div class="row">
-        <h2 class="row__title">FILMEMPFEHLUNGEN</h2>
-        <div class="row__posters">
-            <img src="static/large-movie1.jpg" alt="" class="row__poster row__posterLarge">
-            <img src="static/large-movie2.jpg" alt="" class="row__poster row__posterLarge">
-            <img src="static/large-movie3.jpg" alt="" class="row__poster row__posterLarge">
-            <img src="static/large-movie4.jpg" alt="" class="row__poster row__posterLarge">
-            <img src="static/large-movie5.jpg" alt="" class="row__poster row__posterLarge">
-            <img src="static/large-movie6.jpg" alt="" class="row__poster row__posterLarge">
-            <img src="static/large-movie7.jpg" alt="" class="row__poster row__posterLarge">
-            <img src="static/large-movie8.jpg" alt="" class="row__poster row__posterLarge">
-        </div>
-    </div>
-
-    <!-- <div class="pythonscript">
-        <py-script src="rs/system.py"></py-script>
-    </div> -->
 </body>
 </html>
