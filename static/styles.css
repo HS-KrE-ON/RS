@@ -232,3 +232,15 @@ ol {
   background-color: rgb(255, 255, 255);
   border-radius: 3px;
 }
+
+.output1 {
+  background-color: #303030;
+  background-size: cover;
+  background-position: center center;
+  color: white;
+  font-size: larger;
+  object-fit: contain;
+  width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+}
