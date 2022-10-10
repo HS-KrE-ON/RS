@@ -216,3 +216,19 @@ ol {
   border-radius: 5px;
   text-align: center;
 }
+
+.output1 ul,
+ol {
+  list-style-position: inside;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+.output1 li {
+  line-height: 1.25;
+  margin: 0 0 1.1em;
+  color: #191919;
+  padding: 0.8em;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+}
