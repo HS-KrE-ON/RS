@@ -42,6 +42,7 @@ function select(element) {
     document.querySelector(".output").innerHTML = `
 <ol>
 ${generateListItems(movies)}
+<input type=button id=reove onclick=removeItem()>
 </ol>
 `;
   };
@@ -84,4 +85,8 @@ function submitMovies(){
     }
     }
   )
+}
+
+function removeItem(){
+  
 }
