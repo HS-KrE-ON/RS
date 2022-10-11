@@ -22,9 +22,17 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
-    - name: Run Unit Tests
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9"]
+    steps:
+    - uses: actions/checkout@v3
+      - name: Run Unit Tests
       run: |
-        -python recommendersystem.py        
+        recommendersystem.py        
          
   deploy:
       runs-on: ubuntu-latest
