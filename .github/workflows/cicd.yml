@@ -32,7 +32,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Run Unit Tests
       run: |
-        recommendersystem.py        
+        python -m test_recommendersystem        
          
   deploy:
       runs-on: ubuntu-latest
