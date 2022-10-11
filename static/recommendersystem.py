@@ -20,8 +20,8 @@ def make_recommendation (fav_movie):
 
     idx = fav_movie
 
-    df_neighbours = pd.read_csv('/data/neighbours_increase.csv')
-    df_distances = pd.read_csv('/data/distances.csv')
+    df_neighbours = pd.read_csv('./data/neighbours_increase.csv')
+    df_distances = pd.read_csv('./data/distances.csv')
 
     neighbours = df_neighbours.iloc[idx-1]
     neighbours = list(neighbours.tolist())[:0:-1]
