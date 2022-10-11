@@ -2,11 +2,13 @@
 const searchWrapper = document.querySelector(".search-input");
 const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
+const del = searchWrapper.querySelector(".mark");
 const icon = searchWrapper.querySelector(".icon");
 const out1 = document.getElementById("output1");
 const submit = searchWrapper.querySelector(".submit");
 let linkTag = searchWrapper.querySelector("a");
 let movies = [];
+let count = 0;
 
 // if user press any key and release
 inputBox.onkeyup = (e) => {
@@ -33,19 +35,41 @@ inputBox.onkeyup = (e) => {
   }
 };
 
+del.onclick = () => {
+  inputBox.value = "";
+};
+
+icon.onclick = () => {
+  let data = inputBox.value;
+  if (!suggestions.includes(data)) {
+    inputBox.value = "";
+    window.open("#popup2", "_self");
+  } else {
+    if (movies.length < 5) {
+      movies.push(data);
+      console.log(movies);
+      inputBox.value = "";
+      document.querySelector(".output").innerHTML = `
+  <ol>
+  ${generateListItems(movies)}
+  </ol>
+  `;
+    } else {
+      inputBox.value = "";
+      window.open("#popup1", "_self");
+    }
+  }
+  searchWrapper.classList.remove("active");
+};
+
 function select(element) {
   let selectData = element.textContent;
   inputBox.value = selectData;
-  icon.onclick = () => {
-    movies.push(selectData);
-    console.log(movies);
-    document.querySelector(".output").innerHTML = `
-<ol>
-${generateListItems(movies)}
-</ol>
-`;
-  };
   searchWrapper.classList.remove("active");
+  if (!suggestions.includes(selectData)) {
+    inputBox.value = "";
+    window.open("#popup2", "_self");
+  }
 }
 
 function showSuggestions(list) {
@@ -62,30 +86,48 @@ function showSuggestions(list) {
 function generateListItems(arg) {
   let items = "";
   for (let i = 0; i < arg.length; i++) {
-    items += `<li>${arg[i]}</li>`;
+    items += `<li id="item">${arg[i]}<input type="button" value="X" id="${[
+      i,
+    ]}" onclick="remove(this)"></li>`;
   }
   return items;
 }
 
-function submitMovies(){
+function remove(element) {
+  var value = element.id;
+  console.log("Gelöschtes Element: " + value);
+  movies.splice(value, 1);
+  console.log(movies);
+  document.querySelector(".output").innerHTML = `
+  <ol>
+  ${generateListItems(movies)}
+  </ol>
+  `;
+}
+
+function submitMovies() {
   $.ajax({
-    url : 'post',
-    type : 'POST',
-    data : {
-      moviearr: movies
+    url: "post",
+    type: "POST",
+    data: {
+      moviearr: movies,
     },
-    success: function(res) { 
-      console.log("Flask input "+ res);
+    success: function (res) {
+      console.log("Flask input " + res);
       document.querySelector(".output1").innerHTML = `
       <ol>
       ${generateListItems(res)}
       </ol>
       `;
-    }
-    }
-  )
+    },
+  });
 }
 
-function removeItem(){
-  
+function clear_all() {
+  movies = [];
+  document.querySelector(".output").innerHTML = `
+  <ol>
+  ${generateListItems(movies)}
+  </ol>
+  `;
 }

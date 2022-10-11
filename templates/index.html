@@ -1,54 +1,87 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Netflix</title>
     <link rel="stylesheet" href="static/styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-</head>
-<body>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
     <div class="navbar" id="nav">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Logonetflix.png/800px-Logonetflix.png?20170904093427" alt="" class="nav__logo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117" alt="" class="nav__avatar">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Logonetflix.png/800px-Logonetflix.png?20170904093427"
+        alt=""
+        class="nav__logo"
+      />
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117"
+        alt=""
+        class="nav__avatar"
+      />
     </div>
 
     <div class="banner">
-        <div class="banner__contents">
-            <h1 class="banner__title">Haus des Geldes</h1>
+      <div class="banner__contents">
+        <h1 class="banner__title">Money Heist</h1>
+      </div>
+    </div>
+
+    <div id="popup1" class="overlay">
+      <div class="popup">
+        <h2>Limit reached</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+          You are limited to 5 movies. Please submit or replace a selected
+          movie.
         </div>
+      </div>
+    </div>
+
+    <div id="popup2" class="overlay">
+      <div class="popup">
+        <h2>Not found</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">dsadsad</div>
+      </div>
     </div>
 
     <div class="wrapper">
-        <div class="search-input">
-          <a href="" target="_blank" hidden></a>
-          <input type="text" id="searchin" placeholder="Search a movie..">
-          <div class="autocom-box">
-            <!-- here list are inserted from javascript -->
-          </div>
-          <div class="icon"><i class="fas fa-plus"></i></div>
-        </div>
+      <div class="search-input">
+        <a href="" target="_blank" hidden></a>
+        <input
+          type="text"
+          id="searchin"
+          placeholder="Add your favorite movies..."
+        />
+        <div class="autocom-box"></div>
+        <!-- here list are inserted from javascript -->
+        <div class="mark"><i class="fas fa-times"></i></div>
+        <div class="icon"><i class="fas fa-plus"></i></div>
       </div>
-    
-      <div class="row">
-        <h2 class="row__title">Ausgewählte Filme</h2>  
-        <ul class="output" id="movies"></ul>
-
-        <form>
-            <input type="button" value="Submit" onclick="submitMovies()" />
-        </form>
-
-        <div class="row">
-            <h2 class="row__title">Filmempfehlungen</h2>  
-            <ul class="output1" id="movies"></ul>
     </div>
 
-       <script src="static/suggestions.js"></script> 
-       <script src="static/script.js"></script>
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <div class="row">
+      <h2 class="row__title">Selected movies</h2>
+      <ul class="output" id="movies"></ul>
 
-</body>
+      <form>
+        <input type="button" value="Submit" onclick="submitMovies()" />
+        <button type="button" onclick="clear_all();">Clear all</button>
+      </form>
+    </div>
+    <div class="row">
+      <h2 class="row__title">Movie Recommendations</h2>
+      <ul class="output1" id="movies"></ul>
+    </div>
+
+    <script src="static/suggestions.js"></script>
+    <script src="static/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </body>
 </html>
