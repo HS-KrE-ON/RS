@@ -21,7 +21,10 @@ jobs:
         pip install -r requirements.txt
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files '*.py')        
+        pylint $(git ls-files '*.py')
+    - name: Run Unit Tests
+      script: |
+        -python recommendersystem.py        
          
   deploy:
       runs-on: ubuntu-latest
