@@ -28,9 +28,9 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.9"]
-      steps:
-      - uses: actions/checkout@v3
-      - name: Run Unit Tests
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run Unit Tests
       run: |
         recommendersystem.py        
          
