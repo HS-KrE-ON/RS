@@ -23,7 +23,7 @@ jobs:
       run: |
         pylint $(git ls-files '*.py')
     - name: Run Unit Tests
-      script: |
+      run: |
         -python recommendersystem.py        
          
   deploy:
