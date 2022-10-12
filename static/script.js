@@ -8,6 +8,7 @@ const out1 = document.getElementById("output1");
 const submit = searchWrapper.querySelector(".submit");
 let linkTag = searchWrapper.querySelector("a");
 var count = 0;
+var clicks = 0;
 let movies = [];
 let res = [];
 
@@ -41,7 +42,7 @@ del.onclick = () => {
 };
 
 icon.onclick = () => {
-  count++
+  count++;
   let data = inputBox.value;
   if(inputBox.value == ""){
     return
@@ -144,6 +145,12 @@ function remove(element) {
 }
 
 function submitMovies() {
+  clicks ++;
+  if (clicks == 2){
+    window.open("#popup4", "_self");
+    return
+  }
+  else{
   $.ajax({
     url: "post",
     type: "POST",
@@ -158,8 +165,10 @@ function submitMovies() {
       </ol>
       `;
       element = document.getElementById("view").scrollIntoView({behavior: 'smooth' });
+      clicks = 0;
     },
   });
+}
 }
 
 function clear_all() {
