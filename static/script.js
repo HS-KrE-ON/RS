@@ -73,7 +73,7 @@ icon.onclick = () => {
   ${generateOutput(res)}
   </ol>
   `
-  if(count==1){document.getElementById("view1").scrollIntoView({behavior: 'smooth' });}
+  if(count==1 || count==3){document.getElementById("view1").scrollIntoView({behavior: 'smooth' });}
     } else {
       inputBox.value = "";
       window.open("#popup1", "_self");
