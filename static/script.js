@@ -147,7 +147,7 @@ function remove(element) {
 function submitMovies() {
   clicks ++;
   if (clicks > 1){
-    return window.open("#popup4", "_self");
+    return
   }
   else{
   $.ajax({
