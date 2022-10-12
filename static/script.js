@@ -44,7 +44,15 @@ icon.onclick = () => {
   if (!suggestions.includes(data)) {
     inputBox.value = "";
     window.open("#popup2", "_self");
-  } else {
+  } 
+  else if(movies.includes(data)){
+    inputBox.value = "";
+    window.open("#popup3", "_self");
+  }
+  else if(inputBox.value == ""){
+    break
+  }
+  else {
     if (movies.length < 5) {
       movies.push(data);
       console.log(movies);
@@ -93,6 +101,14 @@ function generateListItems(arg) {
   return items;
 }
 
+function generateOutput(arg) {
+  let items = "";
+  for (let i = 0; i < arg.length; i++) {
+    items += `<li id="item">${arg[i]}</li>`;
+  }
+  return items;
+}
+
 function remove(element) {
   var value = element.id;
   console.log("Gelöschtes Element: " + value);
@@ -116,7 +132,7 @@ function submitMovies() {
       console.log("Flask input " + res);
       document.querySelector(".output1").innerHTML = `
       <ol>
-      ${generateListItems(res)}
+      ${generateOutput(res)}
       </ol>
       `;
     },
@@ -125,9 +141,15 @@ function submitMovies() {
 
 function clear_all() {
   movies = [];
+  res = []
   document.querySelector(".output").innerHTML = `
   <ol>
   ${generateListItems(movies)}
   </ol>
   `;
+  document.querySelector(".output1").innerHTML = `
+      <ol>
+      ${generateOutput(res)}
+      </ol>
+      `;
 }
