@@ -66,6 +66,12 @@ icon.onclick = () => {
   ${generateListItems(movies)}
   </ol>
   `;
+  res = [];
+  document.querySelector(".output1").innerHTML = `
+  <ol>
+  ${generateOutput(res)}
+  </ol>
+  `;
     } else {
       inputBox.value = "";
       window.open("#popup1", "_self");
@@ -123,6 +129,12 @@ function remove(element) {
   ${generateListItems(movies)}
   </ol>
   `;
+  res = [];
+  document.querySelector(".output1").innerHTML = `
+  <ol>
+  ${generateOutput(res)}
+  </ol>
+  `;
 }
 
 function submitMovies() {
@@ -140,7 +152,7 @@ function submitMovies() {
       </ol>
       `;
       location.href = "#";
-      location.href = "#output1";
+      location.href = "#view";
     },
   });
 }
