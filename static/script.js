@@ -151,7 +151,6 @@ function submitMovies() {
       ${generateOutput(res)}
       </ol>
       `;
-      location.href = "#";
       location.href = "#view";
     },
   });
