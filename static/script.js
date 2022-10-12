@@ -70,7 +70,8 @@ icon.onclick = () => {
   <ol>
   ${generateOutput(res)}
   </ol>
-  `;
+  `
+  document.getElementById("view1").scrollIntoView({behavior: 'smooth' });
     } else {
       inputBox.value = "";
       window.open("#popup1", "_self");
@@ -150,7 +151,7 @@ function submitMovies() {
       ${generateOutput(res)}
       </ol>
       `;
-      document.getElementById("view").scrollIntoView();
+      element = document.getElementById("view").scrollIntoView({behavior: 'smooth' });
     },
   });
 }
