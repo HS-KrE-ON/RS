@@ -8,6 +8,7 @@ const out1 = document.getElementById("output1");
 const submit = searchWrapper.querySelector(".submit");
 var myElement = document.getElementById('view');
 var topPos = myElement.offsetTop;
+let linkTag = searchWrapper.querySelector("a");
 let movies = [];
 let count = 0;
 let res = [];
@@ -152,7 +153,7 @@ function submitMovies() {
       ${generateOutput(res)}
       </ol>
       `;
-      document.getElementById('scrolling_div').scrollTop = topPos;
+      document.getElementById('view').scrollTop = topPos;
     },
   });
 }
