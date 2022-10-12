@@ -139,6 +139,8 @@ function submitMovies() {
       ${generateOutput(res)}
       </ol>
       `;
+      window.scrollBy(0,1);
+      scrolldelay = setTimeout(pageScroll,10);
     },
   });
 }
