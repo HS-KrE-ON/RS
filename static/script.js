@@ -8,7 +8,6 @@ const out1 = document.getElementById("output1");
 const submit = searchWrapper.querySelector(".submit");
 let linkTag = searchWrapper.querySelector("a");
 let movies = [];
-let count = 0;
 let res = [];
 
 // if user press any key and release
@@ -151,6 +150,7 @@ function submitMovies() {
       ${generateOutput(res)}
       </ol>
       `;
+      document.getElementById('view').scrollTop -= 500;
     },
   });
 }
