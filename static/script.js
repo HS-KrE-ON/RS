@@ -150,7 +150,7 @@ function submitMovies() {
       ${generateOutput(res)}
       </ol>
       `;
-      document.getElementById("view").scrollTop -= 500;
+      document.getElementById("view").scrollTop -= 5000;
     },
   });
 }
