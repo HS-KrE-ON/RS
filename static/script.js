@@ -50,9 +50,9 @@ icon.onclick = () => {
     inputBox.value = "";
     window.open("#popup3", "_self");
   }
-  // else if(inputBox.value == ""){
-    
-  // }
+  else if(inputBox.value == ""){
+    return
+    }
   else {
     if (movies.length < 5) {
       movies.push(data);
