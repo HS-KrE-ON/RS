@@ -160,7 +160,8 @@ function submitMovies() {
 
 function clear_all() {
   movies = [];
-  res = []
+  res = [];
+  count = 0;
   document.querySelector(".output").innerHTML = `
   <ol>
   ${generateListItems(movies)}
