@@ -7,6 +7,7 @@ const icon = searchWrapper.querySelector(".icon");
 const out1 = document.getElementById("output1");
 const submit = searchWrapper.querySelector(".submit");
 let linkTag = searchWrapper.querySelector("a");
+var count = 0;
 let movies = [];
 let res = [];
 
@@ -40,6 +41,7 @@ del.onclick = () => {
 };
 
 icon.onclick = () => {
+  count++
   let data = inputBox.value;
   if(inputBox.value == ""){
     return
@@ -71,7 +73,7 @@ icon.onclick = () => {
   ${generateOutput(res)}
   </ol>
   `
-  document.getElementById("view1").scrollIntoView({behavior: 'smooth' });
+  if(count==1){document.getElementById("view1").scrollIntoView({behavior: 'smooth' });}
     } else {
       inputBox.value = "";
       window.open("#popup1", "_self");
