@@ -9,6 +9,7 @@ const submit = searchWrapper.querySelector(".submit");
 let linkTag = searchWrapper.querySelector("a");
 let movies = [];
 let count = 0;
+let res = [];
 
 // if user press any key and release
 inputBox.onkeyup = (e) => {
@@ -49,9 +50,9 @@ icon.onclick = () => {
     inputBox.value = "";
     window.open("#popup3", "_self");
   }
-  else if(inputBox.value == ""){
-    break
-  }
+  // else if(inputBox.value == ""){
+    
+  // }
   else {
     if (movies.length < 5) {
       movies.push(data);
