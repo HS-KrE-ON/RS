@@ -6,7 +6,8 @@ const del = searchWrapper.querySelector(".mark");
 const icon = searchWrapper.querySelector(".icon");
 const out1 = document.getElementById("output1");
 const submit = searchWrapper.querySelector(".submit");
-let linkTag = searchWrapper.querySelector("a");
+var myElement = document.getElementById('view');
+var topPos = myElement.offsetTop;
 let movies = [];
 let count = 0;
 let res = [];
@@ -151,7 +152,7 @@ function submitMovies() {
       ${generateOutput(res)}
       </ol>
       `;
-      location.href = "#view";
+      document.getElementById('scrolling_div').scrollTop = topPos;
     },
   });
 }
