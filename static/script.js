@@ -42,14 +42,17 @@ del.onclick = () => {
 
 icon.onclick = () => {
   let data = inputBox.value;
-  if (!suggestions.includes(data)) {
-    inputBox.value = "";
-    window.open("#popup2", "_self");
-  } 
-  else if(movies.includes(data)){
+  if(inputBox.value == ""){
+    return
+    }
+  if(movies.includes(data)){
     inputBox.value = "";
     window.open("#popup3", "_self");
   }
+  else if (!suggestions.includes(data)) {
+    inputBox.value = "";
+    window.open("#popup2", "_self");
+  } 
   else if(inputBox.value == ""){
     return
     }
