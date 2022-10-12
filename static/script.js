@@ -48,10 +48,12 @@ icon.onclick = () => {
     }
   if(movies.includes(data)){
     inputBox.value = "";
+    count = 0;
     window.open("#popup3", "_self");
   }
   else if (!suggestions.includes(data)) {
     inputBox.value = "";
+    count = 0;
     window.open("#popup2", "_self");
   } 
   else if(inputBox.value == ""){
@@ -76,6 +78,7 @@ icon.onclick = () => {
   if(count==1 || count==3){document.getElementById("view1").scrollIntoView({behavior: 'smooth' });}
     } else {
       inputBox.value = "";
+      count = 0;
       window.open("#popup1", "_self");
     }
   }
@@ -88,6 +91,7 @@ function select(element) {
   searchWrapper.classList.remove("active");
   if (!suggestions.includes(selectData)) {
     inputBox.value = "";
+    count = 0;
     window.open("#popup2", "_self");
   }
 }

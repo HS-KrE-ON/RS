@@ -32,37 +32,6 @@
       </div>
     </div>
 
-    <div id="popup1" class="overlay">
-      <div class="popup">
-        <h2>Limit reached</h2>
-        <a class="close" href="#">&times;</a>
-        <div class="content">
-          You are limited to 5 movies. Please submit or replace a selected
-          movie.
-        </div>
-      </div>
-    </div>
-
-    <div id="popup2" class="overlay">
-      <div class="popup">
-        <h2>Not found</h2>
-        <a class="close" href="#">&times;</a>
-        <div class="content">
-          Your selected movie is not provided in our database.
-          Please select a different movie</div>
-      </div>
-    </div>
-
-    <div id="popup3" class="overlay">
-      <div class="popup">
-        <h2>Already Selected</h2>
-        <a class="close" href="#">&times;</a>
-        <div class="content">
-          This movie is already in your selected Films.
-          Please select a different Film.</div>
-      </div>
-    </div>
-
     <div class="wrapper">
       <div class="search-input">
         <a href="" target="_blank" hidden></a>
@@ -83,6 +52,37 @@
       <ul class="output" id="movies"></ul>
 
       <div id="view1"></div>
+
+      <div id="popup1" class="overlay">
+        <div class="popup">
+          <h2>Limit reached</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="content">
+            You are limited to 5 movies. Please submit or replace a selected
+            movie.
+          </div>
+        </div>
+      </div>
+  
+      <div id="popup2" class="overlay">
+        <div class="popup">
+          <h2>Not found</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="content">
+            Your selected movie is not provided in our database.
+            Please select a different movie</div>
+        </div>
+      </div>
+  
+      <div id="popup3" class="overlay">
+        <div class="popup">
+          <h2>Already Selected</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="content">
+            This movie is already in your selected Films.
+            Please select a different Film.</div>
+        </div>
+      </div>
 
       <form>
         <input type="button" value="Submit" onclick="submitMovies()" />
