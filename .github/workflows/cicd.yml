@@ -21,7 +21,22 @@ jobs:
         pip install -r requirements.txt
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files '*.py')        
+        pylint $(git ls-files '*.py')
+    - name: Run Unit Tests
+      run: |
+        python -m test_recommendersystem
+
+  # test:
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       python-version: ["3.9"]
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #   - name: Run Unit Tests
+  #     run: |
+  #       pip install -r requirements.txt
+  #       python -m test_recommendersystem        
          
   deploy:
       runs-on: ubuntu-latest

@@ -2,11 +2,15 @@
 const searchWrapper = document.querySelector(".search-input");
 const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
+const del = searchWrapper.querySelector(".mark");
 const icon = searchWrapper.querySelector(".icon");
 const out1 = document.getElementById("output1");
 const submit = searchWrapper.querySelector(".submit");
 let linkTag = searchWrapper.querySelector("a");
+var count = 0;
+var clicks = 0;
 let movies = [];
+let res = [];
 
 // if user press any key and release
 inputBox.onkeyup = (e) => {
@@ -33,20 +37,64 @@ inputBox.onkeyup = (e) => {
   }
 };
 
+del.onclick = () => {
+  inputBox.value = "";
+};
+
+icon.onclick = () => {
+  count++;
+  let data = inputBox.value;
+  if(inputBox.value == ""){
+    return
+    }
+  if(movies.includes(data)){
+    inputBox.value = "";
+    count = 0;
+    window.open("#popup3", "_self");
+  }
+  else if (!suggestions.includes(data)) {
+    inputBox.value = "";
+    count = 0;
+    window.open("#popup2", "_self");
+  } 
+  else if(inputBox.value == ""){
+    return
+    }
+  else {
+    if (movies.length < 5) {
+      movies.push(data);
+      console.log(movies);
+      inputBox.value = "";
+      document.querySelector(".output").innerHTML = `
+  <ol>
+  ${generateListItems(movies)}
+  </ol>
+  `;
+  res = [];
+  document.querySelector(".output1").innerHTML = `
+  <ol>
+  ${generateOutput(res)}
+  </ol>
+  `
+  if(count==1 || count==3){document.getElementById("view1").scrollIntoView({behavior: 'smooth' });}
+    } else {
+      inputBox.value = "";
+      count = 0;
+      window.open("#popup1", "_self");
+    }
+  }
+  searchWrapper.classList.remove("active");
+};
+
 function select(element) {
   let selectData = element.textContent;
   inputBox.value = selectData;
-  icon.onclick = () => {
-    movies.push(selectData);
-    console.log(movies);
-    document.querySelector(".output").innerHTML = `
-<ol>
-${generateListItems(movies)}
-<input type=button id=reove onclick=removeItem()>
-</ol>
-`;
-  };
   searchWrapper.classList.remove("active");
+  if (!suggestions.includes(selectData)) {
+    inputBox.value = "";
+    count = 0;
+    window.open("#popup2", "_self");
+  }
 }
 
 function showSuggestions(list) {
@@ -63,30 +111,77 @@ function showSuggestions(list) {
 function generateListItems(arg) {
   let items = "";
   for (let i = 0; i < arg.length; i++) {
-    items += `<li>${arg[i]}</li>`;
+    items += `<li id="item">${arg[i]}<input type="button" value="X" id="${[
+      i,
+    ]}" onclick="remove(this)"></li>`;
   }
   return items;
 }
 
-function submitMovies(){
-  $.ajax({
-    url : 'post',
-    type : 'POST',
-    data : {
-      moviearr: movies
-    },
-    success: function(res) { 
-      console.log("Flask input "+ res);
-      document.querySelector(".output1").innerHTML = `
-      <ol>
-      ${generateListItems(res)}
-      </ol>
-      `;
-    }
-    }
-  )
+function generateOutput(arg) {
+  let items = "";
+  for (let i = 0; i < arg.length; i++) {
+    items += `<li id="item">${arg[i]}</li>`;
+  }
+  return items;
 }
 
-function removeItem(){
-  
+function remove(element) {
+  var value = element.id;
+  console.log("Gelöschtes Element: " + value);
+  movies.splice(value, 1);
+  console.log(movies);
+  document.querySelector(".output").innerHTML = `
+  <ol>
+  ${generateListItems(movies)}
+  </ol>
+  `;
+  res = [];
+  document.querySelector(".output1").innerHTML = `
+  <ol>
+  ${generateOutput(res)}
+  </ol>
+  `;
+}
+
+function submitMovies() {
+  clicks ++;
+  if (clicks > 1){
+    return
+  }
+  else{
+  $.ajax({
+    url: "post",
+    type: "POST",
+    data: {
+      moviearr: movies,
+    },
+    success: function (res) {
+      console.log("Flask input " + res);
+      document.querySelector(".output1").innerHTML = `
+      <ol>
+      ${generateOutput(res)}
+      </ol>
+      `;
+      element = document.getElementById("view").scrollIntoView({behavior: 'smooth' });
+      clicks = 0;
+    },
+  });
+}
+}
+
+function clear_all() {
+  movies = [];
+  res = [];
+  count = 0;
+  document.querySelector(".output").innerHTML = `
+  <ol>
+  ${generateListItems(movies)}
+  </ol>
+  `;
+  document.querySelector(".output1").innerHTML = `
+      <ol>
+      ${generateOutput(res)}
+      </ol>
+      `;
 }

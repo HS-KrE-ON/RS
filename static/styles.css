@@ -97,7 +97,7 @@ body {
 }
 
 .wrapper {
-  max-width: 450px;
+  max-width: 650px;
   margin: 50px auto;
 }
 
@@ -115,7 +115,7 @@ body {
   outline: none;
   border: none;
   border-radius: 5px;
-  padding: 0 60px 0 20px;
+  padding: 0 120px 0 20px;
   font-size: 18px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
@@ -154,6 +154,23 @@ body {
   background: #efefef;
 }
 
+.search-input .mark {
+  position: absolute;
+  right: 50px;
+  top: 0px;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  color: #aba7a7;
+  cursor: pointer;
+}
+
+.search-input .mark:hover {
+  color: #2e2b2b;
+}
+
 .search-input .icon {
   position: absolute;
   right: 0px;
@@ -163,8 +180,12 @@ body {
   text-align: center;
   line-height: 55px;
   font-size: 20px;
-  color: #d11313;
+  color: #da2020;
   cursor: pointer;
+}
+
+.search-input .icon:hover {
+  color: #8d0c0c;
 }
 
 .output {
@@ -189,7 +210,27 @@ ol {
   font-size: 1em;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
+
+.output input{
+  position: sticky;
+  font-size: larger;
+  padding: 2px 20px;
+  left: 91%;
+  border-radius: 3px;
+  border: none;
+  text-align: center;
+  background-color: #d11313;
+  color: white;
+  
+}
+
+.output input:hover {
+  background-color: #d11313;
+  color: rgb(0, 0, 0);
+}
+
 .output li {
   line-height: 1.25;
   margin: 0 0 1.1em;
@@ -197,6 +238,7 @@ ol {
   padding: 0.8em;
   background-color: rgb(255, 255, 255);
   border-radius: 3px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .remove {
@@ -233,6 +275,52 @@ ol {
   border-radius: 3px;
 }
 
+form input {
+  padding: 15px 50px;
+  margin: 10px 4px;
+  margin-left: 40%;
+  width: 200px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: large;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  border-radius: 5px;
+  background: #fff;
+  font-weight: bolder;
+  text-transform: unset;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+form input:hover {
+  border: 2px solid #000000;
+}
+
+form button {
+  padding: 15px 50px;
+  margin: 10px 4px;
+  width: 200px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: large;
+  color: #efefef;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  border-radius: 5px;
+  background: #d11313;
+  font-weight: bolder;
+  text-transform: unset;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+form button:hover {
+  border: 2px solid #000000;
+}
+
 .output1 {
   background-color: #303030;
   background-size: cover;
@@ -243,4 +331,54 @@ ol {
   width: 90%;
   margin: auto;
   margin-top: 2rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 5%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: 300ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  margin-bottom: 2%;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #de1313;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
 }
