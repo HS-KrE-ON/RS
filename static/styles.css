@@ -97,7 +97,7 @@ body {
 }
 
 .wrapper {
-  max-width: 750px;
+  max-width: 650px;
   margin: 50px auto;
 }
 
@@ -110,13 +110,13 @@ body {
 }
 
 .search-input input {
-  height: 75px;
+  height: 55px;
   width: 100%;
   outline: none;
   border: none;
   border-radius: 5px;
   padding: 0 120px 0 20px;
-  font-size: 25px;
+  font-size: 18px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -145,7 +145,6 @@ body {
   width: 100%;
   cursor: default;
   border-radius: 3px;
-  font-size: 20px;
 }
 
 .search-input.active .autocom-box li {
@@ -157,13 +156,13 @@ body {
 
 .search-input .mark {
   position: absolute;
-  right: 60px;
+  right: 50px;
   top: 0px;
   height: 55px;
   width: 55px;
   text-align: center;
-  line-height: 75px;
-  font-size: 30px;
+  line-height: 55px;
+  font-size: 20px;
   color: #aba7a7;
   cursor: pointer;
 }
@@ -179,8 +178,8 @@ body {
   height: 55px;
   width: 55px;
   text-align: center;
-  line-height: 75px;
-  font-size: 30px;
+  line-height: 55px;
+  font-size: 20px;
   color: #da2020;
   cursor: pointer;
 }
