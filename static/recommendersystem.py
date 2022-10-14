@@ -1,7 +1,6 @@
 '''Module to match mapper to IDs'''
 import pickle as pkl
 import pandas as pd
-from fuzzywuzzy import fuzz
 
 # pylint: disable=consider-using-with
 open_file = open('data/movie_mapper.pkl', "rb")
@@ -77,7 +76,7 @@ def process_recommendations(list_of_entries):
     '''
     for ele in list_of_entries:
         my_favorite = [ele]
-        idx = convert_movie(movie_to_idx, fav_movie=my_favorite)
+        idx = convert_movie(convert= movie_to_idx, fav_movie=my_favorite)
         make_recommendation(idx)
 
     sort_combinations(combination)
@@ -86,11 +85,12 @@ def process_recommendations(list_of_entries):
     #print_recommendations(combination)
 # pylint: disable=inconsistent-return-statements
 
-def convert_movie(movie_to_idx, fav_movie):
+def convert_movie(convert, fav_movie):
     '''
     convert movie strings to id
     '''
-    mapper=movie_to_idx
+    # pylint: disable=unnecessary-comprehension
+    mapper=convert
     idx = []
     entry = fav_movie[0]
     vorwaerts_mapper = {k: v for k, v in mapper.items()}
