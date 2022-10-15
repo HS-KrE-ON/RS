@@ -1,7 +1,7 @@
 '''Unit Test for Recommendations'''
 import unittest
 from static.recommendersystem import recommendate
-from static.script import submitMovies
+from static.script.js import submitMovies
 
 class TestRecommendation(unittest.TestCase):
     '''
