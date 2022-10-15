@@ -48,7 +48,10 @@ pip3 install -r .\requirements.txt
 ## Run API
 python .\app.py
 ## Create Datafiles
-The data you need to run the system in provided in this repository. If you want to use the data provided by Netflix visit https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data and download following data:
+The data you need to run the system is provided in this repository.
+
+Optional:
+If you want to use the data provided by Netflix visit https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data and download following data:
 - movies_titles.csv
 - combined_data_1.txt
 - combined_data_2.txt
