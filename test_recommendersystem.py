@@ -1,6 +1,7 @@
 '''Unit Test for Recommendations'''
 import unittest
 from static.recommendersystem import recommendate
+from static.script import submitMovies
 
 class TestRecommendation(unittest.TestCase):
     '''
@@ -25,6 +26,13 @@ class TestRecommendation(unittest.TestCase):
         '''Test if the output array is empty'''
         empty_list=[]
         output_list = recommendate(['Dinosaur Planet (2003)'])
+        self.assertNotEqual(output_list, empty_list)
+
+    def test_frontend(self):
+        '''Test if frontend is reachable'''
+        empty_list=[]
+        movies =['Dinosaur Planet (2003)']
+        output_list = submitMovies(movies)
         self.assertNotEqual(output_list, empty_list)
 
 if __name__ == '__main__':
