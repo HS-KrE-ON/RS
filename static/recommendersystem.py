@@ -1,7 +1,6 @@
 '''Module to match mapper to IDs'''
 import pickle as pkl
 import pandas as pd
-from fuzzywuzzy import fuzz
 
 # pylint: disable=consider-using-with
 open_file = open('data/movie_mapper.pkl', "rb")
@@ -77,7 +76,7 @@ def process_recommendations(list_of_entries):
     '''
     for ele in list_of_entries:
         my_favorite = [ele]
-        idx = fuzzy_matching(movie_to_idx, fav_movie=my_favorite, verbose=True)
+        idx = convert_movie(convert= movie_to_idx, fav_movie=my_favorite)
         make_recommendation(idx)
 
     sort_combinations(combination)
@@ -86,27 +85,17 @@ def process_recommendations(list_of_entries):
     #print_recommendations(combination)
 # pylint: disable=inconsistent-return-statements
 
-def fuzzy_matching(mapper, fav_movie, verbose=True):
-    """
-    return the closest match via fuzzy ratio. If no match found, return None
-    """
-    # pylint: disable=unused-argument
-    # pylint: disable=inconsistent-return-statements
-    match_tuple = []
-    # get match
-    for title, idx in mapper.items():
-        ratio = fuzz.ratio(title.lower(), fav_movie)
-        if ratio >= 60:
-            match_tuple.append((title, idx, ratio))
-     # sort
-    match_tuple = sorted(match_tuple, key=lambda x: x[2])[::-1]
-    if not match_tuple:
-        print('Oops! No match is found')
-        return
-    #if verbose:
-    #print('Vorschläge auf Grundlage der FuzzyTechniques:
-    #{0}\n'.format([x[0] for x in match_tuple]))
-    return match_tuple[0][1]
+def convert_movie(convert, fav_movie):
+    '''
+    convert movie strings to id
+    '''
+    # pylint: disable=unnecessary-comprehension
+    mapper=convert
+    idx = []
+    entry = fav_movie[0]
+    vorwaerts_mapper = {k: v for k, v in mapper.items()}
+    idx=vorwaerts_mapper[entry]
+    return idx
 
 #Entry for recommendations
 def recommendate(array):
