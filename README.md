@@ -40,13 +40,18 @@ or for multiple
 https://recommender-system-hs.herokuapp.com/recommendation?movies=111,420,69
 
 ## How to use TODO
-git clone https://github.com/MBulti/HS_Sem5_ProgrammingProject.git
+## If not already installed
+Install python: https://www.digitalocean.com/community/tutorials/install-python-windows-10
+Install git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+## Open Command Prompt and type in the following commands:
+git clone https://github.com/HS-KrE-ON/RS
+cd RS
 pip3 install virtualenv
 python -m venv env
-.\evn\Scripts\activate
 pip3 install -r .\requirements.txt
 ## Run API
 python .\app.py
+-> Copy the first created link and open it in your browser
 ## Create Datafiles
 The data you need to run the system is provided in this repository.
 
