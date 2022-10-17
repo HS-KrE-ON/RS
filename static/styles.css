@@ -22,8 +22,8 @@ body {
   overflow-y: hidden;
   overflow-x: scroll;
   padding: 20px;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .row__poster:hover {
@@ -44,6 +44,7 @@ body {
   margin-top: 5rem;
 }
 
+/* banner: Pirates of the Carribean */
 .banner {
   background-image: url("banner.jpg");
   background-size: cover;
@@ -65,6 +66,7 @@ body {
   padding-bottom: 0.3rem;
 }
 
+/* navigation bar on the top of the page */
 .nav__logo {
   width: 80px;
   object-fit: contain;
@@ -88,6 +90,7 @@ body {
   background-color: #111;
 }
 
+/* Searchbar */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
@@ -150,10 +153,11 @@ body {
 .search-input.active .autocom-box li {
   display: block;
 }
+
 .autocom-box li:hover {
   background: #efefef;
 }
-
+/* searchbar x-icon */
 .search-input .mark {
   position: absolute;
   right: 50px;
@@ -170,7 +174,7 @@ body {
 .search-input .mark:hover {
   color: #2e2b2b;
 }
-
+/* searchbar +-icon */
 .search-input .icon {
   position: absolute;
   right: 0px;
@@ -188,6 +192,7 @@ body {
   color: #8d0c0c;
 }
 
+/* selected movies list */
 .output {
   background-color: #303030;
   background-size: cover;
@@ -212,8 +217,8 @@ ol {
   padding: 0;
   list-style: none;
 }
-
-.output input{
+/* remove icon */
+.output input {
   position: sticky;
   font-size: larger;
   padding: 2px 20px;
@@ -223,7 +228,7 @@ ol {
   text-align: center;
   background-color: #d11313;
   color: white;
-  
+
 }
 
 .output input:hover {
@@ -238,27 +243,10 @@ ol {
   padding: 0.8em;
   background-color: rgb(255, 255, 255);
   border-radius: 3px;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-.remove {
-  position: fixed;
-  margin-right: 10px;
-  width: 20px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  background-color: #f77070;
-  color: black;
-  font-size: 16px;
-  padding: 16px 30px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
-}
-
+/* movie recommendation list */
 .output1 ul,
 ol {
   list-style-position: inside;
@@ -266,6 +254,7 @@ ol {
   margin: 0;
   padding: 0;
 }
+
 .output1 li {
   line-height: 1.25;
   margin: 0 0 1.1em;
@@ -275,6 +264,7 @@ ol {
   border-radius: 3px;
 }
 
+/* submit button */
 form input {
   padding: 15px 50px;
   margin: 10px 4px;
@@ -291,13 +281,14 @@ form input {
   background: #fff;
   font-weight: bolder;
   text-transform: unset;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 form input:hover {
   border: 2px solid #000000;
 }
 
+/* clear all button */
 form button {
   padding: 15px 50px;
   margin: 10px 4px;
@@ -314,7 +305,7 @@ form button {
   background: #d11313;
   font-weight: bolder;
   text-transform: unset;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 form button:hover {
@@ -333,6 +324,7 @@ form button:hover {
   margin-top: 2rem;
 }
 
+/* new page overlay for popups */
 .overlay {
   position: fixed;
   top: 5%;
@@ -344,11 +336,12 @@ form button:hover {
   visibility: hidden;
   opacity: 0;
 }
+
 .overlay:target {
   visibility: visible;
   opacity: 1;
 }
-
+/* popup window */
 .popup {
   margin: 70px auto;
   padding: 20px;
@@ -365,6 +358,7 @@ form button:hover {
   color: #333;
   font-family: Tahoma, Arial, sans-serif;
 }
+
 .popup .close {
   position: absolute;
   top: 10px;
@@ -375,9 +369,11 @@ form button:hover {
   text-decoration: none;
   color: #333;
 }
+
 .popup .close:hover {
   color: #de1313;
 }
+
 .popup .content {
   max-height: 30%;
   overflow: auto;

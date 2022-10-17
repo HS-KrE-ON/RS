@@ -21,15 +21,6 @@ def array_post():
     movies = request.form.getlist('moviearr[]')
     return recommendate(movies)
 
-
-@app.route('/get', methods=['GET', 'POST'])
-def get():
-    """loads post array"""
-    # movies = request.form.getlist('moviearr[]')
-    moviearray = ["Dinosaur Planet (2003)"]
-    return recommendate(moviearray)
-
-
 if __name__ == '__main__':
     cfg_port = os.getenv('PORT', "5000")
     app.run(host="0.0.0.0", port=cfg_port)
