@@ -15,30 +15,7 @@ https://github.com/HS-KrE-ON/RS/actions
 
 ## Access via Frontend
 The frontend of this application is available via https://rs-api-end.herokuapp.com/
-Here you can type in up to five movies you liked and the system provides ten recommendations. 
-
-## Deployment TODO
-The API is deployed via a ci/cd pipeline using github actions. With the deployment of new changes the python file is tested and later pushed to the heroku app.
-
-Both the linting and code validity is checked before doing so.
-
-Only after the build step is completed the deploy step begins
-
-The three relevant enpoints are as follows:
-
-This index html file
-https://recommender-system-hs.herokuapp.com/
-
-The list of available movies
-https://recommender-system-hs.herokuapp.com/movies
-
-A recommendation based on a given movie id
-https://recommender-system-hs.herokuapp.com/recommendation?movies=111
-
-or for multiple
-
-https://recommender-system-hs.herokuapp.com/recommendation?movies=111,420,69
-
+Here you can type in up to five movies you liked and the system provides ten recommendations.
 ## How to use TODO
 ## If not already installed
 - Install python: https://www.digitalocean.com/community/tutorials/install-python-windows-10
