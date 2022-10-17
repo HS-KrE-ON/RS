@@ -16,7 +16,7 @@ https://github.com/HS-KrE-ON/RS/actions
 ## Access via Frontend
 The frontend of this application is available via https://rs-api-end.herokuapp.com/
 Here you can type in up to five movies you liked and the system provides ten recommendations.
-## How to use TODO
+# How to use
 ## If not already installed
 - Install python: https://www.digitalocean.com/community/tutorials/install-python-windows-10
 - Install git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
